@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/HeadInventory"
+        android:onClick="onHelmetSlotClick"
+        android:background="#e6c98a"
+        android:contentDescription="@string/AnnoyingDogImage.png"
+        android:layout_above="@+id/ArmorInventory"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/ArmorInventory"
+        android:onClick="onArmorSlotClick"
+        android:background="#e6c98a"
+        android:contentDescription="@string/AnnoyingDogImage.png"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/LeggingsInvetory"
+        android:onClick="onLeggingsSlotClick"
+        android:background="#e6c98a"
+        android:contentDescription="@string/AnnoyingDogImage.png"
+        android:layout_below="@+id/ArmorInventory"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/RightHand"
+        android:src="righty"
+        android:onClick="onLeftHandSlotClick"
+        android:background="#e6c98a"
+        android:contentDescription="@string/AnnoyingDogImage.png"
+        android:layout_alignTop="@+id/ArmorInventory"
+        android:layout_toLeftOf="@+id/HeadInventory"
+        android:layout_toStartOf="@+id/HeadInventory" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/LeftHand"
+        android:src="Lefty"
+        android:onClick="onRightHandSlotClick"
+        android:background="#e6c98a"
+        android:contentDescription="@string/AnnoyingDogImage.png"
+        android:layout_alignTop="@+id/ArmorInventory"
+        android:layout_toRightOf="@+id/ArmorInventory"
+        android:layout_toEndOf="@+id/ArmorInventory" />
+
+    <ImageButton
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/BootsInventory"
+        android:layout_below="@+id/LeggingsInvetory"
+        android:layout_centerHorizontal="true"
+        android:onClick="onBootsSlotClick"
+        android:background="#e6c98a"
+        android:layout_alignParentEnd="false"
+        android:contentDescription="@string/AnnoyingDogImage.png" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/HealthInventory"
+        android:layout_alignTop="@+id/HeadInventory"
+        android:layout_alignLeft="@+id/AgilityInventory"
+        android:layout_alignStart="@+id/AgilityInventory" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/AgilityInventory"
+        android:layout_below="@+id/HealthInventory"
+        android:layout_alignLeft="@+id/DefenceInventory"
+        android:layout_alignStart="@+id/DefenceInventory" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/DefenceInventory"
+        android:layout_below="@+id/AgilityInventory"
+        android:layout_alignLeft="@+id/AttackInventory"
+        android:layout_alignStart="@+id/AttackInventory" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/AttackInventory"
+        android:layout_below="@+id/DefenceInventory"
+        android:layout_alignLeft="@+id/IntellegenceInventory"
+        android:layout_alignStart="@+id/IntellegenceInventory" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Small Text"
+        android:id="@+id/IntellegenceInventory"
+        android:layout_below="@+id/AttackInventory"
+        android:layout_alignLeft="@+id/RightHand"
+        android:layout_alignStart="@+id/RightHand" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:id="@+id/InventoryBackButton"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/InvetorySpinner"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/HeadInventory" />
+
+</RelativeLayout>
