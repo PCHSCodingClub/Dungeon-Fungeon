@@ -15,7 +15,7 @@ public class Player {
     int attack = 1;
     int intelligence = 1;
 
-    int[] equpiment = new int[]{    // list of the player's equipment ID
+    int[] equipment = new int[]{    // list of the player's equipment ID
             0,                          // headgear ID
             0,                          // the body armor ID
             0,                          // the right hand gear ID
@@ -29,7 +29,7 @@ public class Player {
             0,  0,  0,  0,
             0,  0,  0,  0
     };
-    
+
     public String getName(){
         return name;
     }
@@ -37,23 +37,23 @@ public class Player {
     public int getCurrentHP(){
         return currentHP;
     }
-    
+
     public int getMaxHP(){
         return maxHP;
     }
-    
+
     public int getBaseSpeed(){
         return baseSpeed;
     }
-    
+
     public int getDefence(){
         return defence;
     }
-    
+
     public int getAttack(){
         return attack;
     }
-    
+
     public int getIntelligence(){
         return intelligence
     }
