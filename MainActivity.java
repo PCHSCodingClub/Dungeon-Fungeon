@@ -14,13 +14,13 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onCreditsClick(View v) {
         if (v.getId() == R.id.CreditsButton) {
-            Intent i = new Intent(MainActivity.this, Credits.class);
+            Intent i = new Intent(MainActivity.this, CreditsActivity.class);
             startActivity(i);
         }
     }
     public void onStartClick(View v) {
         if (v.getId() == R.id.StartButton) {
-            Intent i = new Intent(MainActivity.this, Start.class);
+            Intent i = new Intent(MainActivity.this, StartActivity.class);
             startActivity(i);
         }
     }
