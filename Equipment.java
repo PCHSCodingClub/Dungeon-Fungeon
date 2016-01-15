@@ -14,7 +14,7 @@ public class Equipment {
     boolean isBoots;
     boolean isWeapon;
 
-    public void assignStats(){
+    public void assignStats(){ // assigns stas based on the ID
         switch (ID){
             case 0:
                 name = new String("Nothing");
