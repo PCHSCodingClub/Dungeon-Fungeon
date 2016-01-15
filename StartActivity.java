@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 
-public class Start extends AppCompatActivity {
+public class StartActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,7 +20,7 @@ public class Start extends AppCompatActivity {
         if (v.getId() == R.id.OkayNameButton) {
             nameText = nameTextField.getText().toString();
             RoomActivity.player = new Player(nameText);
-            Intent i = new Intent(Start.this, RoomActivity.class);
+            Intent i = new Intent(StartActivity.this, RoomActivity.class);
             startActivity(i);
         }
     }
