@@ -55,7 +55,7 @@ public class Player {
     }
 
     public int getIntelligence(){
-        return intelligence
+        return intelligence;
     }
 
     Player(String n){
