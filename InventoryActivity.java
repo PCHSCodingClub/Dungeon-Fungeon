@@ -23,35 +23,41 @@ public class InventoryActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.DefenceInventory)).setText(RoomActivity.player.getDefence()); //Defence
         ((TextView)findViewById(R.id.AttackInventory)).setText(RoomActivity.player.getAttack()); //Attack
         ((TextView)findViewById(R.id.IntellegenceInventory)).setText(RoomActivity.player.getIntelligence()); //Intelligence
-    }
+        
+    } // Goes to the activity corresponding to the equipment slot.
     public void onArmorSlotClick(View v) {
-        if (v.getId() == R.id.StartButton) {
-            Intent i = new Intent(InventoryActivity.this, ArmorEquipActivity.class); //Armor Button
+        if (v.getId() == R.id.ArmorInventory) {
+            Intent i = new Intent(InventoryActivity.this, ArmorEquiptActivity.class); //Armor Button
             startActivity(i);
         }
+    }
     public void onHelmetSlotClick(View v) {
-        if (v.getId() == R.id.StartButton) {
-            Intent i = new Intent(InventoryActivity.this, HelmetEquipActivity.class); //Helmet Button
+        if (v.getId() == R.id.HelmetInventory) {
+            Intent i = new Intent(InventoryActivity.this, HelmetEquiptActivity.class); //Helmet Button
             startActivity(i);
         }
+    }
     public void onLeggingsSlotClick(View v) {
-        if (v.getId() == R.id.StartButton) {
-            Intent i = new Intent(InventoryActivity.this, LeggingsEquipActivity.class); //Leggings Button
+        if (v.getId() == R.id.LeggingsInventory) {
+            Intent i = new Intent(InventoryActivity.this, LeggingsEquiptActivity.class); //Leggings Button
             startActivity(i);
         }
+    }
     public void onBootsSlotClick(View v) {
-        if (v.getId() == R.id.StartButton) {
-            Intent i = new Intent(InventoryActivity.this, BootsEquipActivity.class); //Boots Button
+        if (v.getId() == R.id.BootsInventory) {
+            Intent i = new Intent(InventoryActivity.this, BootsEquiptActivity.class); //Boots Button
             startActivity(i);
         }
+    }
     public void onLeftHandSlotClick(View v) {
-        if (v.getId() == R.id.StartButton) {
-            Intent i = new Intent(InventoryActivity.this, LeftHandEquipActivity.class); //Left Hand Button
+        if (v.getId() == R.id.LeftHand) {
+            Intent i = new Intent(InventoryActivity.this, LeftHandEquiptActivity.class); //Left Hand Button
             startActivity(i);
         }
+    }
     public void onRightHandSlotClick(View v) {
-        if (v.getId() == R.id.StartButton) {
-            Intent i = new Intent(InventoryActivity.this, RightHandEquipActivity.class); //Right Hand Button
+        if (v.getId() == R.id.RightHand) {
+            Intent i = new Intent(InventoryActivity.this, RightHandEquiptActivity.class); //Right Hand Button
             startActivity(i);
         }
     }
