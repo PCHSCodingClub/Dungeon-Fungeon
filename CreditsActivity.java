@@ -13,8 +13,8 @@ public class CreditsActivity extends AppCompatActivity {
     }
     public void onCreditsBackClick (View v){
         if (v.getId() == R.id.CreditsBack) {
-            Intent j = new Intent(CreditsActivity.this, MainActivity.class);
-            startActivity(j);
+            Intent i = new Intent(CreditsActivity.this, MainActivity.class);
+            startActivity(i);
         }
     }
 }
