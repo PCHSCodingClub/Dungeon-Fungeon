@@ -31,53 +31,9 @@
                 android:text="Room"
                 android:id="@+id/RoomHeaderText"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="A"
-                android:id="@+id/AButton"
-                android:layout_above="@+id/CButton"
-                android:layout_toLeftOf="@+id/RoomHeaderText"
-                android:layout_toStartOf="@+id/RoomHeaderText"
-                android:layout_marginBottom="20dp"
-                android:onClick="aButtonClick" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="C"
-                android:id="@+id/CButton"
-                android:layout_alignParentBottom="true"
-                android:layout_alignLeft="@+id/AButton"
-                android:layout_alignStart="@+id/AButton"
-                android:onClick="cButtonClick" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="B"
-                android:id="@+id/BButton"
-                android:layout_toRightOf="@+id/RoomHeaderText"
-                android:layout_marginBottom="20dp"
-                android:layout_alignTop="@+id/AButton"
-                android:onClick="bButtonClick" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="D"
-                android:id="@+id/DButton"
-                android:layout_below="@+id/BButton"
-                android:layout_alignLeft="@+id/BButton"
-                android:layout_alignStart="@+id/BButton"
-                android:onClick="dButtonClick"
-                android:enabled="true" />
+                android:layout_alignLeft="@+id/AOptionText"
+                android:layout_alignStart="@+id/AOptionText"
+                android:layout_marginTop="39dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -111,6 +67,66 @@
                 android:id="@+id/DOptionText"
                 android:layout_below="@+id/COptionText"
                 android:layout_centerHorizontal="true" />
+
         </RelativeLayout>
     </ScrollView>
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="A"
+        android:id="@+id/AButton"
+        android:onClick="aButtonClick"
+        android:layout_marginLeft="73dp"
+        android:layout_marginStart="73dp"
+        android:layout_above="@+id/CButton"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:id="@+id/CButton"
+        android:onClick="cButtonClick"
+        android:layout_alignTop="@+id/DButton"
+        android:layout_alignLeft="@+id/AButton"
+        android:layout_alignStart="@+id/AButton" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:id="@+id/BButton"
+        android:onClick="bButtonClick"
+        android:layout_alignTop="@+id/AButton"
+        android:layout_toRightOf="@+id/AButton"
+        android:layout_toEndOf="@+id/AButton"
+        android:layout_marginLeft="107dp"
+        android:layout_marginStart="107dp" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D"
+        android:id="@+id/DButton"
+        android:onClick="dButtonClick"
+        android:enabled="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/BButton"
+        android:layout_alignStart="@+id/BButton" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inventory"
+        android:id="@+id/inventory_button"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="inventoryButtonClick" />
 </RelativeLayout>
