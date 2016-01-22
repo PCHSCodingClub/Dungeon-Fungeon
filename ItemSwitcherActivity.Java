@@ -12,10 +12,10 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
     int itemType;    // lets the class know what kind of item to switch
     @Override
     protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_item_switcher);
         itemType = InventoryActivity.itemToSwitch;
         setupItems(itemType);
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_item_switcher);
 
     }
 
