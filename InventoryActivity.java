@@ -64,7 +64,7 @@ public class InventoryActivity extends AppCompatActivity {
     }
     public void onRightHandSlotClick(View v) {
         if (v.getId() == R.id.RightHand) {
-            itemToSwitch = 5;                                                           //Sets item to switch to Right item
+            itemToSwitch = 4;                                                           //Sets item to switch to Right item
             Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Right Hand Button
             startActivity(i);
         }
