@@ -4,6 +4,7 @@ package com.blogspot.darokrithia.dungeonfungeon;
  * Created by Daniel Tabin on 12/10/15.
  */
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -27,6 +28,13 @@ public class RoomActivity extends AppCompatActivity {
 
         currentRoom = dungeon.getRoom(row,column);
         setRoomText();
+    }
+
+    public void inventoryButtonClick(View v){
+        if(v.getId() == R.id.inventory_button){
+            Intent i = new Intent (RoomActivity.this, InventoryActivity.class);
+            startActivity(i);
+        }
     }
 
     public void aButtonClick(View v){
