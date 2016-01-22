@@ -20,6 +20,8 @@
         <activity android:name=".StartActivity" ></activity>
         <activity android:name=".FightActivity"></activity>
         <activity android:name=".InventoryActivity"></activity>
+        <activity android:name=".ItemSwitcherActivity"></activity>
+        
     </application>
 
 </manifest>
