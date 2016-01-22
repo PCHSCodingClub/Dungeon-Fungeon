@@ -8,101 +8,109 @@
     android:columnCount="11"
     android:rowCount="9">
 
-    <TextView
+    <ScrollView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here "
-        android:id="@+id/RoomDescriptionText"
-        android:layout_below="@+id/RoomHeaderText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Room"
-        android:id="@+id/RoomHeaderText"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here "
+                android:id="@+id/RoomDescriptionText"
+                android:layout_below="@+id/RoomHeaderText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A"
-        android:id="@+id/AButton"
-        android:layout_above="@+id/CButton"
-        android:layout_toLeftOf="@+id/RoomHeaderText"
-        android:layout_toStartOf="@+id/RoomHeaderText"
-        android:layout_marginBottom="20dp"
-        android:onClick="aButtonClick" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Room"
+                android:id="@+id/RoomHeaderText"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="C"
-        android:id="@+id/CButton"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/AButton"
-        android:layout_alignStart="@+id/AButton"
-        android:onClick="cButtonClick" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:id="@+id/AButton"
+                android:layout_above="@+id/CButton"
+                android:layout_toLeftOf="@+id/RoomHeaderText"
+                android:layout_toStartOf="@+id/RoomHeaderText"
+                android:layout_marginBottom="20dp"
+                android:onClick="aButtonClick" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="B"
-        android:id="@+id/BButton"
-        android:layout_toRightOf="@+id/RoomHeaderText"
-        android:layout_marginBottom="20dp"
-        android:layout_alignTop="@+id/AButton"
-        android:onClick="bButtonClick" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C"
+                android:id="@+id/CButton"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/AButton"
+                android:layout_alignStart="@+id/AButton"
+                android:onClick="cButtonClick" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D"
-        android:id="@+id/DButton"
-        android:layout_below="@+id/BButton"
-        android:layout_alignLeft="@+id/BButton"
-        android:layout_alignStart="@+id/BButton"
-        android:onClick="dButtonClick"
-        android:enabled="true" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B"
+                android:id="@+id/BButton"
+                android:layout_toRightOf="@+id/RoomHeaderText"
+                android:layout_marginBottom="20dp"
+                android:layout_alignTop="@+id/AButton"
+                android:onClick="bButtonClick" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="A does this"
-        android:id="@+id/AOptionText"
-        android:layout_below="@+id/RoomDescriptionText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D"
+                android:id="@+id/DButton"
+                android:layout_below="@+id/BButton"
+                android:layout_alignLeft="@+id/BButton"
+                android:layout_alignStart="@+id/BButton"
+                android:onClick="dButtonClick"
+                android:enabled="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="B does this"
-        android:id="@+id/BOptionText"
-        android:layout_below="@+id/AOptionText"
-        android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A does this"
+                android:id="@+id/AOptionText"
+                android:layout_below="@+id/RoomDescriptionText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="C does this"
-        android:id="@+id/COptionText"
-        android:layout_below="@+id/BOptionText"
-        android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B does this"
+                android:id="@+id/BOptionText"
+                android:layout_below="@+id/AOptionText"
+                android:layout_centerHorizontal="true" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="D does this"
-        android:id="@+id/DOptionText"
-        android:layout_below="@+id/COptionText"
-        android:layout_centerHorizontal="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C does this"
+                android:id="@+id/COptionText"
+                android:layout_below="@+id/BOptionText"
+                android:layout_centerHorizontal="true" />
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D does this"
+                android:id="@+id/DOptionText"
+                android:layout_below="@+id/COptionText"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </ScrollView>
 </RelativeLayout>
