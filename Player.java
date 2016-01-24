@@ -18,8 +18,6 @@ public class Player {
     int[] equipment = new int[]{    // list of the player's equipment ID
             0,                          // headgear ID
             0,                          // the body armor ID
-            0,                          // the right hand gear ID
-            0,                          // the left hang gear ID
             0,                          // the leg gear ID
             0,                          // the foot gear ID
             0,                          // the right weapon ID
@@ -56,6 +54,14 @@ public class Player {
 
     public int getIntelligence(){
         return intelligence;
+    }
+    
+    public int[] getEquipment(){
+        return equipment;
+    }
+    
+    public int[] getInventory(){
+        return inventory;
     }
 
     Player(String n){
