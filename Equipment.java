@@ -8,11 +8,11 @@ public class Equipment {
     String description;
     int ID = 0;
 
-    boolean isHelmet;
-    boolean isArmor;
-    boolean isLeggings;
-    boolean isBoots;
-    boolean isWeapon;
+    public boolean isHelmet;
+    public boolean isArmor;
+    public boolean isLeggings;
+    public boolean isBoots;
+    public boolean isWeapon;
 
     public void assignStats(){ // assigns stas based on the ID
         switch (ID){
