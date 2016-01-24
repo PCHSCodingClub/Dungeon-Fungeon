@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
+import java.util.ArrayList;
+
 /**
  * Created by dtabin17 on 1/21/16.
  */
@@ -27,6 +29,23 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
     }
 
     public void  setupItems(int t){
+        int[] equippedInventory = RoomActivity.player.getEquipment();
+        int[] inventory = RoomActivity.player.getInventory();
+
+        ArrayList <Equipment> totalInventory = new ArrayList<>();
+
+
+        for (int i = 0; i < equippedInventory.length; i++){
+            int ID = equippedInventory[i];
+            Equipment e = new Equipment(ID);
+            totalInventory.add(e);
+        }
+        for (int i = 0; i < inventory.length; i++){
+            int ID = inventory[i];
+            Equipment e = new Equipment(ID);
+            totalInventory.add(e);
+        }
+
         switch(t){
             case(0):
                 //do stuff
