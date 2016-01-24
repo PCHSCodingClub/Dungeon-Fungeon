@@ -67,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:text="New RadioButton"
                 android:id="@+id/inventoryOption5"
-                android:layout_below="@+id/inventoryOption5"
+                android:layout_below="@+id/inventoryOption4"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:checked="false" />
