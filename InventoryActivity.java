@@ -20,24 +20,25 @@ public class InventoryActivity extends AppCompatActivity {
         //Sets text to being the current total stats for player in the inventory screen.
 
         ((TextView)findViewById(R.id.NameInventory)).setText(RoomActivity.player.getName()); //name
-        ((TextView)findViewById(R.id.HealthInventory)).setText("Health: " + RoomActivity.player.getCurrentHP() + "/" + RoomActivity.player.getMaxHP() + ""); //CurrentHP over MaxHP
-        ((TextView)findViewById(R.id.AgilityInventory)).setText("Speed: " + RoomActivity.player.getBaseSpeed()); //Speed
-        ((TextView)findViewById(R.id.DefenceInventory)).setText("Armor: " + RoomActivity.player.getDefence()); //Defence
-        ((TextView)findViewById(R.id.AttackInventory)).setText("Attack: " + RoomActivity.player.getAttack()); //Attack
-        ((TextView)findViewById(R.id.IntellegenceInventory)).setText("Intelligence: " + RoomActivity.player.getIntelligence()); //Intelligence
+        ((TextView)findViewById(R.id.HealthInventory)).setText("" + RoomActivity.player.getCurrentHP() + "/" + RoomActivity.player.getMaxHP() + ""); //CurrentHP over MaxHP
+        ((TextView)findViewById(R.id.AgilityInventory)).setText(RoomActivity.player.getBaseSpeed()); //Speed
+        ((TextView)findViewById(R.id.DefenceInventory)).setText(RoomActivity.player.getDefence()); //Defence
+        ((TextView)findViewById(R.id.AttackInventory)).setText(RoomActivity.player.getAttack()); //Attack
+        ((TextView)findViewById(R.id.IntellegenceInventory)).setText(RoomActivity.player.getIntelligence()); //Intelligence
 
     } // Goes to the activity corresponding to the equipment slot.
-    public void onArmorSlotClick(View v) {
-        if (v.getId() == R.id.ArmorInventory) {
-            itemToSwitch = 0;                                                           //Sets item to switch to Chest armor
-            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Armor Button
+
+    public void onHelmetSlotClick(View v) {
+        if (v.getId() == R.id.HelmetInventory) {
+            itemToSwitch = 0;                                                           //Sets item to switch to Helmet armor
+            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Helmet Button
             startActivity(i);
         }
     }
-    public void onHelmetSlotClick(View v) {
-        if (v.getId() == R.id.HelmetInventory) {
-            itemToSwitch = 1;                                                           //Sets item to switch to Helmet armor
-            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Helmet Button
+    public void onArmorSlotClick(View v) {
+        if (v.getId() == R.id.ArmorInventory) {
+            itemToSwitch = 1;                                                           //Sets item to switch to Chest armor
+            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Armor Button
             startActivity(i);
         }
     }
