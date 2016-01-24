@@ -28,27 +28,30 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
         }
     }
 
-    public void  setupItems(int t){
-        int[] equippedInventory = RoomActivity.player.getEquipment();
-        int[] inventory = RoomActivity.player.getInventory();
-
-        ArrayList <Equipment> totalInventory = new ArrayList<>();
-
-
-        for (int i = 0; i < equippedInventory.length; i++){
-            int ID = equippedInventory[i];
-            Equipment e = new Equipment(ID);
-            totalInventory.add(e);
-        }
-        for (int i = 0; i < inventory.length; i++){
-            int ID = inventory[i];
-            Equipment e = new Equipment(ID);
-            totalInventory.add(e);
-        }
+    public void  setupItems(int t){                                     //gets the proper Radio buttons
+        int[] equippedInventory = RoomActivity.player.getEquipment();   //here until (look bellow)
+        int[] inventory = RoomActivity.player.getInventory();           //
+                                                                        //
+        ArrayList <Equipment> totalInventory = new ArrayList<>();       //
+                                                                        //
+        for (int i = 0; i < equippedInventory.length; i++){             //
+            int ID = equippedInventory[i];                              //
+            Equipment e = new Equipment(ID);                            //
+            totalInventory.add(e);                                      //
+        }                                                               //
+        for (int i = 0; i < inventory.length; i++){                     //
+        int ID = inventory[i];                                          //
+            Equipment e = new Equipment(ID);                            //
+        totalInventory.add(e);                                          //
+        }                                                               //here gets the players equipment into a one nice and easy to use ArrayList
 
         switch(t){
             case(0):
-                //do stuff
+                for (int i = 0; i < totalInventory.size(); i++){
+                    if((totalInventory.get(i).isArmor) && !(totalInventory.get(i).equals(RoomActivity.player.getEquipment()[0]))){
+
+                    }
+                }
                 break;
             case(1):
                 //do stuff
