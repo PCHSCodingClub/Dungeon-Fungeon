@@ -14,7 +14,7 @@ public class Equipment {
     boolean isBoots;
     boolean isWeapon;
 
-    public void assignStats(){ // assigns stats based on the ID
+    public void assignStats(){ // assigns stas based on the ID
         switch (ID){
             case 0:
                 name = new String("Nothing");
@@ -99,6 +99,11 @@ public class Equipment {
             break;
 
         }
+    }
+
+    public String getText(){
+        String str = ("" + name + ": " + description);
+        return str;
     }
 
     public Equipment(int id){
