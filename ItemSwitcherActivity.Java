@@ -47,7 +47,7 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
 
         switch(t){
             case(0):
-                for (int i = 0; i < totalInventory.size(); i++){
+                for (int i = 0, r = 0; i < totalInventory.size(); i++){
                     if((totalInventory.get(i).isArmor) && !(totalInventory.get(i).equals(RoomActivity.player.getEquipment()[0]))){
 
                     }
