@@ -2,8 +2,11 @@ package com.blogspot.darokrithia.dungeonfungeon;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 
@@ -28,26 +31,27 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
         }
     }
 
-    public void  setupItems(int t){                                     //gets the proper Radio buttons
-        int[] equippedInventory = RoomActivity.player.getEquipment();   //here until (look bellow)
-        int[] inventory = RoomActivity.player.getInventory();           //
-                                                                        //
-        ArrayList <Equipment> totalInventory = new ArrayList<>();       //
-                                                                        //
-        for (int i = 0; i < equippedInventory.length; i++){             //
-            int ID = equippedInventory[i];                              //
-            Equipment e = new Equipment(ID);                            //
-            totalInventory.add(e);                                      //
-        }                                                               //
-        for (int i = 0; i < inventory.length; i++){                     //
-        int ID = inventory[i];                                          //
-            Equipment e = new Equipment(ID);                            //
-        totalInventory.add(e);                                          //
-        }                                                               //here gets the players equipment into a one nice and easy to use ArrayList
+    public void  setupItems(int t){                                             //gets the proper Radio buttons
+        int[] equippedInventory = RoomActivity.player.getEquipment();           //here until (look bellow)
+        int[] inventory = RoomActivity.player.getInventory();                   //
+                                                                                //
+        ArrayList <Equipment> totalInventory = new ArrayList<>();               //
+        RadioGroup listOfItems = (RadioGroup) findViewById(R.id.inventoryList); //                                                                    //
+        for (int i = 0; i < equippedInventory.length; i++){                     //
+            int ID = equippedInventory[i];                                      //
+            Equipment e = new Equipment(ID);                                    //
+            totalInventory.add(e);                                              //
+        }                                                                       //
+        for (int i = 0; i < inventory.length; i++){                             //
+        int ID = inventory[i];                                                  //
+            Equipment e = new Equipment(ID);                                    //
+        totalInventory.add(e);                                                  //
+        }                                                                       //here gets the players equipment into a one nice and easy to use ArrayList
 
         switch(t){
             case(0):
-                for (int i = 0, r = 0; i < totalInventory.size(); i++){
+                ((RadioButton) listOfItems.getChildAt(0)).setText(totalInventory.get(0).getText());
+                for (int i = 0, r = 1; i < totalInventory.size(); i++){
                     if((totalInventory.get(i).isArmor) && !(totalInventory.get(i).equals(RoomActivity.player.getEquipment()[0]))){
 
                     }
