@@ -53,7 +53,7 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
                 ((RadioButton) listOfItems.getChildAt(0)).setText(totalInventory.get(0).getText());
                 int r = 1;
                 for (int i = 0; i < totalInventory.size(); i++){
-                    if((totalInventory.get(i).isArmor) && !(totalInventory.get(i).equals(RoomActivity.player.getEquipment()[0]))){
+                    if((totalInventory.get(i).isHelmet) && !(totalInventory.get(i).equals(RoomActivity.player.getEquipment()[0]))){
                         ((RadioButton) listOfItems.getChildAt(i)).setText(totalInventory.get(r).getText());
                         r++;
                     }
