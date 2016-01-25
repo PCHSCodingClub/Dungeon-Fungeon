@@ -13,13 +13,13 @@ public class Layout {
         0,0,0,0,0
     };
     int[] row1 = {
-        0,0,1,0,0
+        0,1,2,1,0
     };
     int[] row2 = {
-        0,1,0,1,0
+        0,2,1,2,0
     };
     int[] row3 = {
-        0,0,1,0,0
+        0,1,2,1,0
     };
     int[] row4 = {
         0,0,0,0,0
@@ -45,6 +45,9 @@ public class Layout {
         ID = grid[row][column];
 
         r.roomID = ID;
+        if(ID == 2){
+            r.roomState = 1;
+        }
     }
     public void fill(){     //fills array lists with rooms
         for(int i = 0; i < rows; i++){
