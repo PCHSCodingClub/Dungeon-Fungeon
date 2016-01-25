@@ -9,82 +9,42 @@ public class Layout {
     int rows = 1;       //how many rows of rooms
     int columns = 1;    //how many columns of rooms
 
+    int[] row0 = {
+        0,0,0,0,0
+    };
+    int[] row1 = {
+        0,0,1,0,0
+    };
+    int[] row2 = {
+        0,1,0,1,0
+    };
+    int[] row3 = {
+        0,0,1,0,0
+    };
+    int[] row4 = {
+        0,0,0,0,0
+    };
+    int[][] grid = {
+        row0,
+        row1,
+        row2,
+        row3,
+        row4
+    };
+
     ArrayList<ArrayList<Room>> roomsLayout = new ArrayList<>();
 
     public void assignID(Room r) {
-        if(r.myRow == 0){
-            r.roomID = 0;
-        }
-        else if (r.myRow == 1) {
-            if(r.myColumn == 0){
-                r.roomID = 0;
-            }
-            else if (r.myColumn == 1){
-                r.roomID = 1;
-            }
-            else if (r.myColumn == 2){
-                r.roomID = 2;
-                r.roomState = 1;
-            }
-            else if (r.myColumn == 3){
-                r.roomID = 1;
-            }
-            else if (r.myColumn == 4){
-                r.roomID = 0;
-            }
-            else{
-                r.roomID = 0;
-            }
-        }
-        else if (r.myRow == 2) {
-            if(r.myColumn == 0){
-                r.roomID = 0;
-            }
-            else if (r.myColumn == 1) {
-                r.roomID = 2;
-                r.roomState = 1;
-            }
-            else if (r.myColumn == 2){
-                r.roomID = 1;
-            }
-            else if (r.myColumn == 3) {
-                r.roomID = 2;
-                r.roomState = 1;
-            }
-            else if (r.myColumn == 4){
-                r.roomID = 0;
-            }
-            else{
-                r.roomID = 0;
-            }
-        }
-        else if (r.myRow == 3) {
-            if(r.myColumn == 0){
-                r.roomID = 0;
-            }
-            else if (r.myColumn == 1){
-                r.roomID = 1;
-            }
-            else if (r.myColumn == 2){
-                r.roomID = 2;
-                r.roomState = 1;
-            }
-            else if (r.myColumn == 3){
-                r.roomID = 1;
-            }
-            else if (r.myColumn == 4){
-                r.roomID = 0;
-            }
-            else{
-                r.roomID = 0;
-            }
-        }
-        else if (r.myRow == 4){
-            r.roomID = 0;
-        }
-        else{
-            r.roomID = 0;
-        }
+        int ID;
+        int row;
+        int column;
+
+        row = r.myRow;
+        column = r.myColumn;
+
+        ID = grid[row][column];
+
+        r.roomID = ID;
     }
     public void fill(){     //fills array lists with rooms
         for(int i = 0; i < rows; i++){
