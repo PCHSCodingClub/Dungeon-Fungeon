@@ -23,7 +23,7 @@ public class InventoryActivity extends AppCompatActivity {
         ((TextView)findViewById(R.id.HealthInventory)).setText("HP: " + RoomActivity.player.getCurrentHP() + "/" + RoomActivity.player.getMaxHP() + ""); //CurrentHP over MaxHP
         ((TextView)findViewById(R.id.AgilityInventory)).setText("Speed: " + RoomActivity.player.getBaseSpeed()); //Speed
         ((TextView)findViewById(R.id.DefenceInventory)).setText("Armor: " + RoomActivity.player.getDefence()); //Defence
-        ((TextView)findViewById(R.id.AttackInventory)).setText("Attacl: " + RoomActivity.player.getAttack()); //Attack
+        ((TextView)findViewById(R.id.AttackInventory)).setText("Attack: " + RoomActivity.player.getAttack()); //Attack
         ((TextView)findViewById(R.id.IntelligenceInventory)).setText("Intelligence: " + RoomActivity.player.getIntelligence()); //Intelligence
 
     } // Goes to the activity corresponding to the equipment slot.
