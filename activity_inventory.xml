@@ -117,14 +117,14 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:id="@+id/AttackInventory"
         android:layout_below="@+id/DefenceInventory"
-        android:layout_alignLeft="@+id/IntellegenceInventory"
-        android:layout_alignStart="@+id/IntellegenceInventory" />
+        android:layout_alignLeft="@+id/IntelligenceInventory"
+        android:layout_alignStart="@+id/IntelligenceInventory" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceSmall"
-        android:id="@+id/IntellegenceInventory"
+        android:id="@+id/IntelligenceInventory"
         android:layout_below="@+id/AttackInventory"
         android:layout_alignLeft="@+id/RightHand"
         android:layout_alignStart="@+id/RightHand" />
