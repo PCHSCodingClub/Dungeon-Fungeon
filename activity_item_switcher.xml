@@ -2,6 +2,169 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView">
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/horizontalScrollView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true">
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/inventoryList">
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption1"
+                    android:layout_below="@+id/backButton"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_marginTop="67dp"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="591dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption2"
+                    android:layout_below="@+id/scrollView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption3"
+                    android:layout_below="@+id/scrollView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption4"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/inventoryOption4"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption5"
+                    android:layout_below="@+id/inventoryOption4"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption6"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/inventoryOption6"
+                    android:layout_alignParentLeft="true" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption7"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/radioButton6"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption8"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/inventoryOption7"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption9"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/inventoryOption14"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption10"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/inventoryOption13"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption11"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/inventoryOption10"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption12"
+                    android:layout_below="@+id/scrollView"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption13"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/inventoryOption12"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false" />
+
+                <RadioButton
+                    android:layout_width="305dp"
+                    android:layout_height="wrap_content"
+                    android:text="New RadioButton"
+                    android:id="@+id/inventoryOption14"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/inventoryOption11"
+                    android:layout_alignParentLeft="true"
+                    android:checked="false" />
+            </RadioGroup>
+        </HorizontalScrollView>
+    </ScrollView>
+
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
@@ -13,154 +176,5 @@
         android:layout_alignParentStart="true"
         android:nestedScrollingEnabled="false"
         android:onClick="onBackClick" />
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/scrollView">
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption1"
-                android:layout_below="@+id/backButton"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginTop="67dp"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption2"
-                android:layout_below="@+id/scrollView"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption3"
-                android:layout_below="@+id/scrollView"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption4"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/inventoryOption4"
-                android:layout_alignParentLeft="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption5"
-                android:layout_below="@+id/inventoryOption4"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption6"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/inventoryOption6"
-                android:layout_alignParentLeft="true" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption7"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/radioButton6"
-                android:layout_alignParentLeft="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption8"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/inventoryOption7"
-                android:layout_alignParentLeft="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption9"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/inventoryOption14"
-                android:layout_alignParentLeft="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption10"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/inventoryOption13"
-                android:layout_alignParentLeft="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption11"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/inventoryOption10"
-                android:layout_alignParentLeft="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption12"
-                android:layout_below="@+id/scrollView"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption13"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/inventoryOption12"
-                android:layout_alignParentLeft="true"
-                android:checked="false" />
-
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New RadioButton"
-                android:id="@+id/inventoryOption14"
-                android:layout_alignParentStart="true"
-                android:layout_below="@+id/inventoryOption11"
-                android:layout_alignParentLeft="true"
-                android:checked="false" />
-        </RadioGroup>
-    </ScrollView>
 
 </RelativeLayout>
