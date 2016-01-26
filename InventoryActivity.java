@@ -20,11 +20,11 @@ public class InventoryActivity extends AppCompatActivity {
         //Sets text to being the current total stats for player in the inventory screen.
 
         ((TextView)findViewById(R.id.NameInventory)).setText(RoomActivity.player.getName()); //name
-        ((TextView)findViewById(R.id.HealthInventory)).setText("" + RoomActivity.player.getCurrentHP() + "/" + RoomActivity.player.getMaxHP() + ""); //CurrentHP over MaxHP
-        ((TextView)findViewById(R.id.AgilityInventory)).setText(RoomActivity.player.getBaseSpeed()); //Speed
-        ((TextView)findViewById(R.id.DefenceInventory)).setText(RoomActivity.player.getDefence()); //Defence
-        ((TextView)findViewById(R.id.AttackInventory)).setText(RoomActivity.player.getAttack()); //Attack
-        ((TextView)findViewById(R.id.IntellegenceInventory)).setText(RoomActivity.player.getIntelligence()); //Intelligence
+        ((TextView)findViewById(R.id.HealthInventory)).setText("HP: " + RoomActivity.player.getCurrentHP() + "/" + RoomActivity.player.getMaxHP() + ""); //CurrentHP over MaxHP
+        ((TextView)findViewById(R.id.AgilityInventory)).setText("Speed: " + RoomActivity.player.getBaseSpeed()); //Speed
+        ((TextView)findViewById(R.id.DefenceInventory)).setText("Armor: " + RoomActivity.player.getDefence()); //Defence
+        ((TextView)findViewById(R.id.AttackInventory)).setText("Attacl: " + RoomActivity.player.getAttack()); //Attack
+        ((TextView)findViewById(R.id.IntelligenceInventory)).setText("Intelligence: " + RoomActivity.player.getIntelligence()); //Intelligence
 
     } // Goes to the activity corresponding to the equipment slot.
 
