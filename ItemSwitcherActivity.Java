@@ -14,14 +14,14 @@ import java.util.ArrayList;
  * Created by dtabin17 on 1/21/16.
  */
 public class ItemSwitcherActivity extends AppCompatActivity{        //Used to switch items in inventory slots
-    int itemType;    // lets the class know what kind of item to switch
+    int itemType = InventoryActivity.itemToSwitch;;    // lets the class know what kind of item to switch
+    RadioGroup listOfItems;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
-        itemType = InventoryActivity.itemToSwitch;
-        setupItems(itemType);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_switcher);
-
+        setupItems(itemType);
     }
 
     public void onBackClick(View v){                //when player clicks back button
@@ -34,11 +34,9 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
     public void  setupItems(int t){                                             //gets the proper Radio buttons
         int[] equippedInventory = RoomActivity.player.getEquipment();           //here until (look bellow)
         int[] inventory = RoomActivity.player.getInventory();                   //
-        ArrayList<Equipment>inventoryListed = new ArrayList<>();                //
+        ArrayList <Equipment> totalInventory = new ArrayList<>();               //Compiled list of inventory and equipped items
+        listOfItems = (RadioGroup) findViewById(R.id.inventoryList);            //The radio group displayed
                                                                                 //
-        ArrayList <Equipment> totalInventory = new ArrayList<>();               //
-                                                                                //
-        RadioGroup listOfItems = (RadioGroup) findViewById(R.id.inventoryList); //                                                                    //
         for (int i = 0; i < equippedInventory.length; i++){                     //
             int ID = equippedInventory[i];                                      //
             Equipment e = new Equipment(ID);                                    //
@@ -53,9 +51,8 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
         switch(t){
             case(0):
                 ((RadioButton) listOfItems.getChildAt(0)).setText(totalInventory.get(0).getText());
-                inventoryListed.add(totalInventory.get(0));
                 int r = 1;
-                for (int i = 0; i < totalInventory.size(); i++){
+                for (int i = 0; i < (totalInventory.size() -1); i++){
                     if((totalInventory.get(i).isHelmet) && !(totalInventory.contains(RoomActivity.player.getEquipment()[0]))){
                         ((RadioButton) listOfItems.getChildAt(i)).setText(totalInventory.get(r).getText());
                         r++;
