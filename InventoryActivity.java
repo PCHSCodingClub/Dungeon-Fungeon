@@ -1,73 +1,113 @@
 package com.blogspot.darokrithia.dungeonfungeon;
 
-import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.TextView;
-
 /**
- * Created by hkeene17 on 1/12/16.
+ * Created by dtabin17 on 1/12/16.
  */
-public class InventoryActivity extends AppCompatActivity {
-    public static int itemToSwitch = -1;
+public class Equipment {
+    String name;
+    String description;
+    int ID = 0;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inventory);
+    public boolean isHelmet;
+    public boolean isArmor;
+    public boolean isLeggings;
+    public boolean isBoots;
+    public boolean isWeapon;
 
-        //Sets text to being the current total stats for player in the inventory screen.
+    public void assignStats(){ // assigns stas based on the ID
+        switch (ID){
+            case 0:
+                name = new String("Nothing");
+                description = new String("You have nothing...");
+                isHelmet = true;
+                isArmor = true;
+                isLeggings = true;
+                isBoots = true;
+                isWeapon = true;
+                break;
+            case 1:
+                name = new String("Hat");
+                description = new String("This is a hat");
+                isHelmet = true;
+                isArmor = false;
+                isLeggings = false;
+                isBoots = false;
+                isWeapon = false;
+            break;
+            case 2:
+                name = new String("Chestplate");
+                description = new String("This is a chestplate");
+                isHelmet = false;
+                isArmor = true;
+                isLeggings = false;
+                isBoots = false;
+                isWeapon = false;
+            break;
+            case 3:
+                name = new String("Pants");
+                description = new String("These are pants");
+                isHelmet = false;
+                isArmor = false;
+                isLeggings = true;
+                isBoots = false;
+                isWeapon = false;
+            break;
+            case 4:
+                name = new String("Shoes");
+                description = new String("These are shoes");
+                isHelmet = false;
+                isArmor = false;
+                isLeggings = false;
+                isBoots = true;
+                isWeapon = false;
+            break;
+            case 5:
+                name = new String("Shield");
+                description = new String("This is a shield");
+                isHelmet = false;
+                isArmor = false;
+                isLeggings = false;
+                isBoots = false;
+                isWeapon = true;
+            break;
+            case 6:
+                name = new String("Sword");
+                description = new String("This is a sword");
+                isHelmet = false;
+                isArmor = false;
+                isLeggings = false;
+                isBoots = false;
+                isWeapon = true;
+            break;
+            case 7:
+                name = new String("Socks");
+                description = new String("Also works as a make shift mask");
+                isHelmet = true;
+                isArmor = false;
+                isLeggings = false;
+                isBoots = true;
+                isWeapon = false;
+                break;
+            default:
+                name = new String("ERROR ITEM");
+                description = new String("This is an ERROR 101101001010101");
+                isHelmet = false;
+                isArmor = false;
+                isLeggings = false;
+                isBoots = false;
+                isWeapon = false;
+            break;
 
-        ((TextView)findViewById(R.id.NameInventory)).setText(RoomActivity.player.getName()); //name
-        ((TextView)findViewById(R.id.HealthInventory)).setText("HP: " + RoomActivity.player.getCurrentHP() + "/" + RoomActivity.player.getMaxHP() + ""); //CurrentHP over MaxHP
-        ((TextView)findViewById(R.id.AgilityInventory)).setText("Speed: " + RoomActivity.player.getBaseSpeed()); //Speed
-        ((TextView)findViewById(R.id.DefenceInventory)).setText("Armor: " + RoomActivity.player.getDefence()); //Defence
-        ((TextView)findViewById(R.id.AttackInventory)).setText("Attack: " + RoomActivity.player.getAttack()); //Attack
-        ((TextView)findViewById(R.id.IntelligenceInventory)).setText("Intelligence: " + RoomActivity.player.getIntelligence()); //Intelligence
-
-    } // Goes to the activity corresponding to the equipment slot.
-
-    public void onHelmetSlotClick(View v) {
-        if (v.getId() == R.id.HelmetInventory) {
-            itemToSwitch = 0;                                                           //Sets item to switch to Helmet armor
-            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Helmet Button
-            startActivity(i);
         }
     }
-    public void onArmorSlotClick(View v) {
-        if (v.getId() == R.id.ArmorInventory) {
-            itemToSwitch = 1;                                                           //Sets item to switch to Chest armor
-            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Armor Button
-            startActivity(i);
-        }
+
+    public String getText(){
+        String str = ("" + name + ": " + description);
+        return str;
     }
-    public void onLeggingsSlotClick(View v) {
-        if (v.getId() == R.id.LeggingsInventory) {
-            itemToSwitch = 2;                                                           //Sets item to switch to Leggings
-            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Leggings Button
-            startActivity(i);
-        }
-    }
-    public void onBootsSlotClick(View v) {
-        if (v.getId() == R.id.BootsInventory) {
-            itemToSwitch = 3;                                                           //Sets item to switch to Boots
-            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Boots Button
-            startActivity(i);
-        }
-    }
-    public void onLeftHandSlotClick(View v) {
-        if (v.getId() == R.id.LeftHand) {
-            itemToSwitch = 4;                                                           //Sets item to switch to Left item
-            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Left Hand Button
-            startActivity(i);
-        }
-    }
-    public void onRightHandSlotClick(View v) {
-        if (v.getId() == R.id.RightHand) {
-            itemToSwitch = 4;                                                           //Sets item to switch to Right item
-            Intent i = new Intent(InventoryActivity.this, ItemSwitcherActivity.class);  //Right Hand Button
-            startActivity(i);
-        }
+
+    public Equipment(int id){
+        ID = id;
+        assignStats();
     }
 }
