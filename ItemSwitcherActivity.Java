@@ -34,8 +34,10 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
     public void  setupItems(int t){                                             //gets the proper Radio buttons
         int[] equippedInventory = RoomActivity.player.getEquipment();           //here until (look bellow)
         int[] inventory = RoomActivity.player.getInventory();                   //
+        ArrayList<Equipment>inventoryListed = new ArrayList<>();                //
                                                                                 //
         ArrayList <Equipment> totalInventory = new ArrayList<>();               //
+                                                                                //
         RadioGroup listOfItems = (RadioGroup) findViewById(R.id.inventoryList); //                                                                    //
         for (int i = 0; i < equippedInventory.length; i++){                     //
             int ID = equippedInventory[i];                                      //
@@ -51,9 +53,10 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
         switch(t){
             case(0):
                 ((RadioButton) listOfItems.getChildAt(0)).setText(totalInventory.get(0).getText());
+                inventoryListed.add(totalInventory.get(0));
                 int r = 1;
                 for (int i = 0; i < totalInventory.size(); i++){
-                    if((totalInventory.get(i).isHelmet) && !(totalInventory.get(i).equals(RoomActivity.player.getEquipment()[0]))){
+                    if((totalInventory.get(i).isHelmet) && !(totalInventory.contains(RoomActivity.player.getEquipment()[0]))){
                         ((RadioButton) listOfItems.getChildAt(i)).setText(totalInventory.get(r).getText());
                         r++;
                     }
@@ -78,6 +81,7 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
                 break;
             default:
                 Intent i = new Intent (ItemSwitcherActivity.this, InventoryActivity.class);
+                startActivity(i);
                 break;
         }
     }
