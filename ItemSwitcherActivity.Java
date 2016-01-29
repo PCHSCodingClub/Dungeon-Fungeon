@@ -1,5 +1,6 @@
 package com.blogspot.darokrithia.dungeonfungeon;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -36,6 +37,7 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
         int[] inventory = RoomActivity.player.getInventory();                   //
         ArrayList <Equipment> totalInventory = new ArrayList<>();               //Compiled list of inventory and equipped items
         listOfItems = (RadioGroup) findViewById(R.id.inventoryList);            //The radio group displayed
+        ArrayList <Equipment> listedInventory = new ArrayList<>();              //Items already listed.
                                                                                 //
         for (int i = 0; i < equippedInventory.length; i++){                     //
             int ID = equippedInventory[i];                                      //
@@ -52,15 +54,13 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
             case(0):
                 ((RadioButton) listOfItems.getChildAt(0)).setText(totalInventory.get(0).getText());
                 int r = 1;
-                for (int i = 0; i < (totalInventory.size() -1); i++){
-                    if((totalInventory.get(i).isHelmet) && !(totalInventory.contains(RoomActivity.player.getEquipment()[0]))){
-                        ((RadioButton) listOfItems.getChildAt(i)).setText(totalInventory.get(r).getText());
+                for (int i = 0; i < (totalInventory.size()-1); i++){
+                    if((totalInventory.get(i).isHelmet) && !(listedInventory.contains(RoomActivity.player.getEquipment()[0]))){
+                        listedInventory.add(totalInventory.get(r));
+                        RadioButton RB = new RadioButton(getApplicationContext());
+                        RB.setText(totalInventory.get(i).getText());
+                        listOfItems.addView(RB);
                         r++;
-                    }
-                }
-                if(r<13){
-                    for (r+=0; r<13; r++){
-                        ((RadioButton) listOfItems.getChildAt(r)).setText("");
                     }
                 }
                 break;
