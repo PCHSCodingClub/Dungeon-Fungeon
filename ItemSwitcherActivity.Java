@@ -1,9 +1,7 @@
 package com.blogspot.darokrithia.dungeonfungeon;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RadioButton;
@@ -52,15 +50,16 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
 
         switch(t){
             case(0):
-                ((RadioButton) listOfItems.getChildAt(0)).setText(totalInventory.get(0).getText());
-                int r = 1;
+                listedInventory.add(totalInventory.get(0));
+                RadioButton helm = new RadioButton(this);
+                helm.setText(totalInventory.get(0).getText());
+                listOfItems.addView(helm);
                 for (int i = 0; i < (totalInventory.size()-1); i++){
-                    if((totalInventory.get(i).isHelmet) && !(listedInventory.contains(RoomActivity.player.getEquipment()[0]))){
-                        listedInventory.add(totalInventory.get(r));
-                        RadioButton RB = new RadioButton(getApplicationContext());
+                    if((totalInventory.get(i).isHelmet) && !(listedInventory.contains(totalInventory.get(i)))){
+                        listedInventory.add(totalInventory.get(i));
+                        RadioButton RB = new RadioButton(this);
                         RB.setText(totalInventory.get(i).getText());
                         listOfItems.addView(RB);
-                        r++;
                     }
                 }
                 break;
