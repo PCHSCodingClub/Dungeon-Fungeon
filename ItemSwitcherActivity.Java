@@ -13,6 +13,17 @@ import java.util.ArrayList;
  * Created by dtabin17 on 1/21/16.
  */
 public class ItemSwitcherActivity extends AppCompatActivity{        //Used to switch items in inventory slots
+
+    int currentLocation;
+    int currentID;
+
+    ArrayList<Integer> switchToLocation = new ArrayList<>();
+    ArrayList<Integer> switchToID = new ArrayList<>();
+
+    int[] equippedInventory = RoomActivity.player.getEquipment();           //here until (look bellow)
+    int[] inventory = RoomActivity.player.getInventory();                   //
+    ArrayList <Equipment> totalInventory = new ArrayList<>();               //Compiled list of inventory and equipped items
+
     int itemType = InventoryActivity.itemToSwitch;;    // lets the class know what kind of item to switch
     RadioGroup listOfItems;
 
@@ -31,11 +42,7 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
     }
 
     public void  setupItems(int t){                                             //gets the proper Radio buttons
-        int[] equippedInventory = RoomActivity.player.getEquipment();           //here until (look bellow)
-        int[] inventory = RoomActivity.player.getInventory();                   //
-        ArrayList <Equipment> totalInventory = new ArrayList<>();               //Compiled list of inventory and equipped items
         listOfItems = (RadioGroup) findViewById(R.id.inventoryList);            //The radio group displayed
-        ArrayList <Equipment> listedInventory = new ArrayList<>();              //Items already listed.
                                                                                 //
         for (int i = 0; i < equippedInventory.length; i++){                     //
             int ID = equippedInventory[i];                                      //
@@ -48,37 +55,68 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
         totalInventory.add(e);                                                  //
         }                                                                       //here gets the players equipment into a one nice and easy to use ArrayList
 
-        switch(t){
-            case(0):
-                listedInventory.add(totalInventory.get(0));
+        switch(t) {
+            case (0):
+                currentLocation = 0;
+                currentID = (totalInventory.get(0)).getID();
+
                 RadioButton helm = new RadioButton(this);
-                helm.setText(totalInventory.get(0).getText());
+                String currentItemText;
+                currentItemText = ("You have " + totalInventory.get(0).getText());
+                helm.setText(currentItemText);
+                helm.setChecked(true);
                 listOfItems.addView(helm);
-                for (int i = 0; i < (totalInventory.size()-1); i++){
-                    if((totalInventory.get(i).isHelmet) && !(listedInventory.contains(totalInventory.get(i)))){
-                        listedInventory.add(totalInventory.get(i));
+                for (int i = 0; i < (totalInventory.size() - 1); i++) {
+                    if ((totalInventory.get(i).isHelmet) && !((totalInventory.get(i).getID()) == 0)) {
                         RadioButton RB = new RadioButton(this);
                         RB.setText(totalInventory.get(i).getText());
                         listOfItems.addView(RB);
+
+                        switchToLocation.add(i);
+                        switchToID.add((totalInventory.get(i)).getID());
                     }
                 }
+                if (totalInventory.get(0).getID() != 0) {
+                    RadioButton unequip = new RadioButton(this);
+                    unequip.setText("Unequip current item");
+                }
                 break;
-            case(1):
+            case (1):
                 //do stuff
                 break;
-            case(2):
+            case (2):
                 //do stuff
                 break;
-            case(3):
+            case (3):
                 //do stuff
                 break;
-            case(4):
+            case (4):
                 //do stuff
                 break;
             default:
-                Intent i = new Intent (ItemSwitcherActivity.this, InventoryActivity.class);
+                Intent i = new Intent(ItemSwitcherActivity.this, InventoryActivity.class);
                 startActivity(i);
                 break;
         }
+    }
+
+    public void onEquipButtonClick(View v){
+        int switchto = (listOfItems.getCheckedRadioButtonId()-1);
+        int tempID;
+        boolean notEquipped = false;
+        if(switchto >= (6)){
+            notEquipped = true;
+        }
+
+        tempID = currentID;
+        RoomActivity.player.equipment[currentLocation] = switchToID.get(switchto);
+
+        if(notEquipped){
+            RoomActivity.player.inventory[switchToLocation.get(switchto + 6)] = tempID;
+        }
+        else{
+            RoomActivity.player.equipment[switchToLocation.get(switchto)] = tempID;
+        }
+        setupItems(itemType);
     }
 }
