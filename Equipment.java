@@ -18,7 +18,7 @@ public class Equipment {
         switch (ID){
             case 0:
                 name = new String("Nothing");
-                description = new String("You have nothing...");
+                description = new String("Its not much of anything");
                 isHelmet = true;
                 isArmor = true;
                 isLeggings = true;
@@ -80,7 +80,7 @@ public class Equipment {
                 isWeapon = true;
             break;
             case 7:
-                name = new String("Socs");
+                name = new String("Socks");
                 description = new String("Also works as a make shift mask");
                 isHelmet = true;
                 isArmor = false;
@@ -104,6 +104,9 @@ public class Equipment {
     public String getText(){
         String str = ("" + name + ": " + description);
         return str;
+    }
+    public int getID(){
+        return ID;
     }
 
     public Equipment(int id){
