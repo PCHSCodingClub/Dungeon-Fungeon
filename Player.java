@@ -14,6 +14,7 @@ public class Player {
     int defence = 1;
     int attack = 1;
     int intelligence = 1;
+    int gold = 1;
 
     int[] equipment = new int[]{    // list of the player's equipment ID
             0,                          // headgear ID
@@ -56,10 +57,12 @@ public class Player {
         return intelligence;
     }
     
+    public int getGold() { return gold; }
+
     public int[] getEquipment(){
         return equipment;
     }
-    
+
     public int[] getInventory(){
         return inventory;
     }
@@ -72,8 +75,9 @@ public class Player {
         defence = 5;
         attack = 10;
         intelligence = 10;
+        gold = 10;
     }
-    Player(String n, int h, int s, int d, int a, int i){
+    Player(String n, int h, int s, int d, int a, int i, int g){
         name = n;
         maxHP = h;
         currentHP = maxHP;
@@ -81,6 +85,7 @@ public class Player {
         defence = d;
         attack = a;
         intelligence = i;
+        gold = g;
     }
 
 }
