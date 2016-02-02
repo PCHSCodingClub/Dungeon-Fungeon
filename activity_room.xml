@@ -1,29 +1,129 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="16dp">
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="fill_parent"
+    android:layout_height="fill_parent" android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:paddingBottom="16dp" tools:context=".RoomActivity"
+    android:columnCount="11"
+    android:rowCount="9">
+    <!--set all values above to 16dp-->
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView2">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here Put something here "
+                android:id="@+id/RoomDescriptionText"
+                android:layout_below="@+id/RoomHeaderText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Room"
+                android:id="@+id/RoomHeaderText"
+                android:layout_alignParentTop="true"
+                android:layout_alignLeft="@+id/AOptionText"
+                android:layout_alignStart="@+id/AOptionText"
+                android:layout_marginTop="39dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A does this"
+                android:id="@+id/AOptionText"
+                android:layout_below="@+id/RoomDescriptionText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="B does this"
+                android:id="@+id/BOptionText"
+                android:layout_below="@+id/AOptionText"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="C does this"
+                android:id="@+id/COptionText"
+                android:layout_below="@+id/BOptionText"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="D does this"
+                android:id="@+id/DOptionText"
+                android:layout_below="@+id/COptionText"
+                android:layout_centerHorizontal="true" />
+
+        </RelativeLayout>
+    </ScrollView>
 
     <Button
         style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Credits"
-        android:id="@+id/CreditsButton"
-        android:onClick="onCreditsClick"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:text="A"
+        android:id="@+id/AButton"
+        android:onClick="aButtonClick"
+        android:layout_below="@+id/scrollView2"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="C"
+        android:id="@+id/CButton"
+        android:onClick="cButtonClick"
+        android:layout_below="@+id/AButton"
+        android:layout_toLeftOf="@+id/AButton"
+        android:layout_toStartOf="@+id/AButton" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="B"
+        android:id="@+id/BButton"
+        android:onClick="bButtonClick"
+        android:layout_below="@+id/AButton"
+        android:layout_toRightOf="@+id/AButton"
+        android:layout_toEndOf="@+id/AButton" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="D"
+        android:id="@+id/DButton"
+        android:onClick="dButtonClick"
+        android:enabled="true"
+        android:layout_below="@+id/CButton"
+        android:layout_toRightOf="@+id/CButton"
+        android:layout_toEndOf="@+id/CButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start"
-        android:id="@+id/StartButton"
+        android:text="Inventory"
+        android:id="@+id/inventory_button"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onStartClick"
-        android:nestedScrollingEnabled="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="inventoryButtonClick"
+        android:nestedScrollingEnabled="false" />
 </RelativeLayout>
