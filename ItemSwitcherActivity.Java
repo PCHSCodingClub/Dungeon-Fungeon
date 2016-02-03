@@ -186,7 +186,7 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
         }
     }
     public int getEmptySlot(){
-        for (int i = 0; i < totalInventory.size(); i++){
+        for (int i = 6; i < totalInventory.size(); i++){
             if(totalInventory.get(i).getID() == 0){
                 return i;
             }
@@ -195,7 +195,7 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
     }
     public void onEquipButtonClick(View v){
         checkIfValidReplacement();
-        
+
         if(listOfItems.getCheckedRadioButtonId() != -1) {
             int switchTo = ((listOfItems.indexOfChild(listOfItems.findViewById(listOfItems.getCheckedRadioButtonId()))));
             int tempID;
@@ -245,7 +245,7 @@ public class ItemSwitcherActivity extends AppCompatActivity{        //Used to sw
                     exitInventory();
                 }
                 break;
-            
+
         }
     }
     public void exitInventory(){
