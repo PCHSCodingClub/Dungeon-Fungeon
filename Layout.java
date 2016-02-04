@@ -1,5 +1,7 @@
 package com.blogspot.darokrithia.dungeonfungeon;
 
+import android.content.Intent;
+
 import java.util.ArrayList;
 
 /**
@@ -10,26 +12,26 @@ public class Layout {
     int columns = 1;    //how many columns of rooms
 
     int[] row0 = {
-        0,0,0,0,0
+            0,0,0,0,0
     };
     int[] row1 = {
-        0,1,2,1,0
+            0,1,2,1,0
     };
     int[] row2 = {
-        0,2,1,2,0
+            0,2,3,2,0
     };
     int[] row3 = {
-        0,1,2,1,0
+            0,1,2,1,0
     };
     int[] row4 = {
-        0,0,0,0,0
+            0,0,0,0,0
     };
     int[][] grid = {
-        row0,
-        row1,
-        row2,
-        row3,
-        row4
+            row0,
+            row1,
+            row2,
+            row3,
+            row4
     };
 
     ArrayList<ArrayList<Room>> roomsLayout = new ArrayList<>();
@@ -46,6 +48,9 @@ public class Layout {
 
         r.roomID = ID;
         if(ID == 2){
+            r.roomState = 1;
+        }
+        if(ID == 3){
             r.roomState = 1;
         }
     }
@@ -117,6 +122,11 @@ public class Layout {
             }
             else{
                 RoomActivity.moveWest();
+            }
+        }
+        else if (room.roomID == 3){
+            if (room.roomState == 1){
+                RoomActivity.goToShop();
             }
         }
         else{
