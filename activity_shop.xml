@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/ShopTopLeft"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:contextClickable="false"
+            android:background="#381f15" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/ShopTopRight"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:contextClickable="false"
+            android:background="#381f15" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/ShopTopCenter"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:contextClickable="false"
+            android:background="#381f15" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/ShopBottomRight"
+            android:contextClickable="false"
+            android:background="#381f15"
+            android:layout_alignBottom="@+id/ShopGoldText"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/ShopBottomLeft"
+            android:contextClickable="false"
+            android:background="#381f15"
+            android:layout_alignBottom="@+id/ShopGoldText"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageButton
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:id="@+id/ShopBottomCenter"
+            android:contextClickable="false"
+            android:background="#381f15"
+            android:layout_alignBottom="@+id/ShopGoldText"
+            android:layout_alignLeft="@+id/ShopTopCenter"
+            android:layout_alignStart="@+id/ShopTopCenter" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="MONEYS"
+            android:id="@+id/ShopGoldText"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:foregroundTint="#fff267" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/BackShopButton"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:onClick="onBackShopClick" />
+    </RelativeLayout>
+</LinearLayout>
