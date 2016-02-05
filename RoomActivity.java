@@ -32,8 +32,18 @@ public class RoomActivity extends AppCompatActivity {
 
     public void inventoryButtonClick(View v){
         if(v.getId() == R.id.inventory_button){
-            Intent i = new Intent (RoomActivity.this, InventoryActivity.class);
-            startActivity(i);
+            if((currentRoom.roomID == 3)){
+                Intent i = new Intent(RoomActivity.this, ShopActivity.class);
+                startActivity(i);
+            }
+            //else if(currentRoom.hasFight){
+            //   Intent i = new Intent(RoomActivity.this, FightActivity.class);
+            //    startActivity(i);
+            //}
+            else {
+                Intent i = new Intent(RoomActivity.this, InventoryActivity.class);
+                startActivity(i);
+            }
         }
     }
 
@@ -133,39 +143,8 @@ public class RoomActivity extends AppCompatActivity {
                     dOption.setText("");
                 }
             }
-        } else if (currentRoom.roomID == 3) {
- +            if (currentRoom.roomState == 1) {
- +                roomText.setText("Welcome to room #3! \n You see a small dusty shop in the corner. \n Is that your hat?");
- +                aOption.setText("Go shopping.");
- +                bOption.setText("Or don't.");
- +                cOption.setText("Or don't");
- +                dOption.setText("Weren't expecting this text were you?");
- +            } else {
- +                roomText.setText("Welcome back to room #3! No, you can't go back to the shop. Yes, I know it's stupid. Yes, this is a beta. yes, I am lazy.");
- +                if (canMove(1)) {
- +                    aOption.setText("Press a to move North");
- +                } else {
- +                    aOption.setText("");
- +                }
- +                if (canMove(2)) {
- +                    bOption.setText("Press b to move East");
- +                } else {
- +                    bOption.setText("");
- +                }
- +                if (canMove(3)) {
- +                    cOption.setText("Press c to move West");
- +                } else {
- +                    cOption.setText("");
-                  }
- -                else{
- +                if (canMove(4)) {
- +                    dOption.setText("Press d to move South");
- +                } else {
-                      dOption.setText("");
-                  }
-              }
-          else{
-            roomText.setText("WAIT WHAT!???\nSomething went terribly wrong.  I don't know if this is your fault or mine, but you aren't supposed to be here.\n  REALLY!  This isn't part of the game.  This room doens't even have a proper ID set up.\n\n  EROROROEROEEROOREEROEOREOR 10100101011001010100101100101\n]n1100100110010101001!!!");
+        } else {
+            roomText.setText("WAIT WHAT!???\nSomething went terribly wrong.  I don't know if this is your fault or mine, but you aren't supposed to be here.\n  REALLY!  This isn't part of the game.  This room doesn't even have a proper ID set up.\n\n  EROROROEROEEROOREEROEOREOR 10100101011001010100101100101\n]n1100100110010101001!!!");
             aOption.setText("Press a to quit");
             bOption.setText("Press b to quit");
             cOption.setText("Press c to quit");
