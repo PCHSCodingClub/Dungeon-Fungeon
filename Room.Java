@@ -11,6 +11,8 @@ public class Room {
     int myColumn;       //column of the Room
     int roomID;         //ID of the room; used to tell what this room has in it
     int roomState;      //state of the room; used to tell what is happening in the room (Have the monsters been killed yet / dialog).
+    boolean isFight;    //
+    boolean isShop;     //Does the room have a fight?
 
     public int getRoomState() {
         return roomState;
@@ -24,20 +26,21 @@ public class Room {
 
     Room(){
         roomID = 0;
-       // setRoomText();
     }
     Room(int c, int r, int ID){
         myColumn = c;
         myRow = r;
         roomID = ID;
         roomState = 0;
-       // setRoomText();
+        isFight = false;
+        isShop = false;
     }
     Room(int c, int r, int ID, int state){
         myColumn = c;
         myRow = r;
         roomID = ID;
         roomState = state;
-        //setRoomText();
+        isFight = false;
+        isShop = false;
     }
 }
