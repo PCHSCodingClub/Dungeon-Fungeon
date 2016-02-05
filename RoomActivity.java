@@ -16,8 +16,8 @@ public class RoomActivity extends AppCompatActivity {
     static int column = 1;         //current column of room
     static int totalRows = 5;      //total number of rows (including blank rooms)
     static int totalColumns = 5;   //total number of columns (including blank rooms)
-    static Layout dungeon = new Layout(totalRows, totalColumns);    //Layout of this
-    static Room currentRoom = dungeon.getRoom(row, column);         //The rooms the player is in
+    static Layout dungeon = new Layout(totalRows,totalColumns);    //Layout of this
+    static Room currentRoom = dungeon.getRoom(row,column);         //The rooms the player is in
     public static Player player;                                   //The player
 
 
@@ -26,39 +26,43 @@ public class RoomActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_room);
 
-        currentRoom = dungeon.getRoom(row, column);
+        currentRoom = dungeon.getRoom(row,column);
         setRoomText();
     }
 
-    public void aButtonClick(View v) {
-        if (v.getId() == R.id.AButton) {
+    public void inventoryButtonClick(View v){
+        if(v.getId() == R.id.inventory_button){
+            Intent i = new Intent (RoomActivity.this, InventoryActivity.class);
+            startActivity(i);
+        }
+    }
+
+    public void aButtonClick(View v){
+        if (v.getId() == R.id.AButton){
             dungeon.optionA(currentRoom);
             setRoomText();
         }
     }
-
-    public void bButtonClick(View v) {
-        if (v.getId() == R.id.BButton) {
+    public void bButtonClick(View v){
+        if (v.getId() == R.id.BButton){
             dungeon.optionB(currentRoom);
             setRoomText();
         }
     }
-
-    public void cButtonClick(View v) {
-        if (v.getId() == R.id.CButton) {
+    public void cButtonClick(View v){
+        if (v.getId() == R.id.CButton){
             dungeon.optionC(currentRoom);
             setRoomText();
         }
     }
-
-    public void dButtonClick(View v) {
-        if (v.getId() == R.id.DButton) {
+    public void dButtonClick(View v){
+        if (v.getId() == R.id.DButton){
             dungeon.optionD(currentRoom);
             setRoomText();
         }
     }
 
-    public void setRoomText() {
+    public void setRoomText(){
         TextView roomText = (TextView) findViewById(R.id.RoomDescriptionText);    //What the room says
         TextView aOption = (TextView) findViewById(R.id.AOptionText);     //What option a does right now
         TextView bOption = (TextView) findViewById(R.id.BOptionText);     //What option b does right now
@@ -80,17 +84,20 @@ public class RoomActivity extends AppCompatActivity {
             }
             if (canMove(2)) {
                 bOption.setText("Press b to move East");
-            } else {
+            }
+            else {
                 bOption.setText("");
             }
             if (canMove(3)) {
                 cOption.setText("Press c to move West");
-            } else {
+            }
+            else {
                 cOption.setText("");
             }
-            if (canMove(4)) {
+            if (canMove(4)){
                 dOption.setText("Press d to move South");
-            } else {
+            }
+            else{
                 dOption.setText("");
             }
         } else if (currentRoom.roomID == 2) {
@@ -109,47 +116,20 @@ public class RoomActivity extends AppCompatActivity {
                 }
                 if (canMove(2)) {
                     bOption.setText("Press b to move East");
-                } else {
+                }
+                else {
                     bOption.setText("");
                 }
                 if (canMove(3)) {
                     cOption.setText("Press c to move West");
-                } else {
+                }
+                else {
                     cOption.setText("");
                 }
-                if (canMove(4)) {
+                if (canMove(4)){
                     dOption.setText("Press d to move South");
-                } else {
-                    dOption.setText("");
                 }
-            }
-        } else if (currentRoom.roomID == 3) {
-            if (currentRoom.roomState == 1) {
-                roomText.setText("Welcome to room #3! \n You see a small dusty shop in the corner. \n Is that your hat?");
-                aOption.setText("Go shopping.");
-                bOption.setText("Or don't.");
-                cOption.setText("Or don't");
-                dOption.setText("Weren't expecting this text were you?");
-            } else {
-                roomText.setText("Welcome back to room #3! No, you can't go back to the shop. Yes, I know it's stupid. Yes, this is a beta. yes, I am lazy.");
-                if (canMove(1)) {
-                    aOption.setText("Press a to move North");
-                } else {
-                    aOption.setText("");
-                }
-                if (canMove(2)) {
-                    bOption.setText("Press b to move East");
-                } else {
-                    bOption.setText("");
-                }
-                if (canMove(3)) {
-                    cOption.setText("Press c to move West");
-                } else {
-                    cOption.setText("");
-                }
-                if (canMove(4)) {
-                    dOption.setText("Press d to move South");
-                } else {
+                else{
                     dOption.setText("");
                 }
             }
@@ -160,42 +140,45 @@ public class RoomActivity extends AppCompatActivity {
             cOption.setText("Press c to quit");
             dOption.setText("Press d to quit");
         }
-
     }
 
-    public Room getCurrentRoom() {
+    public Room getCurrentRoom(){
         return currentRoom;
     }
 
-    public static boolean canMove(int direction) {      //makes sure there is no zero room (A wall / blank room) in the direction you want to go
+    public static boolean canMove(int direction){      //makes sure there is no zero room (A wall / blank room) in the direction you want to go
         Room testRoom;
-        switch (direction) {
+        switch (direction){
             case 1:
-                testRoom = dungeon.getRoom((row - 1), column);
-                if (testRoom.getRoomID() == 0) {
+                testRoom = dungeon.getRoom((row-1),column);
+                if(testRoom.getRoomID() == 0){
                     return false;
-                } else {
+                }
+                else{
                     return true;
                 }
             case 2:
-                testRoom = dungeon.getRoom(row, (column - 1));
-                if (testRoom.getRoomID() == 0) {
+                testRoom = dungeon.getRoom(row,(column-1));
+                if(testRoom.getRoomID() == 0){
                     return false;
-                } else {
+                }
+                else{
                     return true;
                 }
             case 3:
-                testRoom = dungeon.getRoom(row, (column + 1));
-                if (testRoom.getRoomID() == 0) {
+                testRoom = dungeon.getRoom(row,(column+1));
+                if(testRoom.getRoomID() == 0){
                     return false;
-                } else {
+                }
+                else{
                     return true;
                 }
             case 4:
-                testRoom = dungeon.getRoom((row + 1), column);
-                if (testRoom.getRoomID() == 0) {
+                testRoom = dungeon.getRoom((row+1),column);
+                if(testRoom.getRoomID() == 0){
                     return false;
-                } else {
+                }
+                else{
                     return true;
                 }
             default:
@@ -203,35 +186,29 @@ public class RoomActivity extends AppCompatActivity {
         }
     }
 
-    public static void moveNorth() {    //moves up one row
-        if (canMove(1)) {
+    public static void moveNorth(){    //moves up one row
+        if(canMove(1)){
             row -= 1;
             currentRoom = dungeon.getRoom(row, column);
         }
     }
-
-    public static void moveEast() {     //moves across one column
-        if (canMove(2)) {
+    public static void moveEast(){     //moves across one column
+        if(canMove(2)){
             column -= 1;
-            currentRoom = dungeon.getRoom(row, column);
+            currentRoom = dungeon.getRoom(row,column);
         }
     }
-
-    public static void moveWest() {     //moves back one column
-        if (canMove(3)) {
+    public static void moveWest(){     //moves back one column
+        if(canMove(3)){
             column += 1;
-            currentRoom = dungeon.getRoom(row, column);
+            currentRoom = dungeon.getRoom(row,column);
         }
     }
-
-    public static void moveSouth() {    //moves down one row
-        if (canMove(4)) {
+    public static void moveSouth(){    //moves down one row
+        if(canMove(4)){
             row += 1;
-            currentRoom = dungeon.getRoom(row, column);
+            currentRoom = dungeon.getRoom(row,column);
         }
-    }
-    public static void goToShop(){     //Go to ShopActivity
-        StartActivity(ShopActivity.class);
     }
 
 
