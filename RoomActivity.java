@@ -32,18 +32,8 @@ public class RoomActivity extends AppCompatActivity {
 
     public void inventoryButtonClick(View v){
         if(v.getId() == R.id.inventory_button){
-            if((currentRoom.roomID == 3)){
-                Intent i = new Intent(RoomActivity.this, ShopActivity.class);
-                startActivity(i);
-            }
-            //else if(currentRoom.hasFight){
-            //   Intent i = new Intent(RoomActivity.this, FightActivity.class);
-            //    startActivity(i);
-            //}
-            else {
-                Intent i = new Intent(RoomActivity.this, InventoryActivity.class);
-                startActivity(i);
-            }
+            Intent i = new Intent (RoomActivity.this, InventoryActivity.class);
+            startActivity(i);
         }
     }
 
@@ -51,6 +41,18 @@ public class RoomActivity extends AppCompatActivity {
         if (v.getId() == R.id.AButton){
             dungeon.optionA(currentRoom);
             setRoomText();
+        }
+        if((currentRoom.roomID == 3)){
+            Intent i = new Intent(RoomActivity.this, ShopActivity.class);
+            startActivity(i);
+        }
+        else if(currentRoom.isFight){
+            Intent i = new Intent(RoomActivity.this, FightActivity.class);
+            startActivity(i);
+        }
+        else {
+            Intent i = new Intent(RoomActivity.this, InventoryActivity.class);
+            startActivity(i);
         }
     }
     public void bButtonClick(View v){
@@ -143,8 +145,39 @@ public class RoomActivity extends AppCompatActivity {
                     dOption.setText("");
                 }
             }
-        } else {
-            roomText.setText("WAIT WHAT!???\nSomething went terribly wrong.  I don't know if this is your fault or mine, but you aren't supposed to be here.\n  REALLY!  This isn't part of the game.  This room doesn't even have a proper ID set up.\n\n  EROROROEROEEROOREEROEOREOR 10100101011001010100101100101\n]n1100100110010101001!!!");
+        } else if (currentRoom.roomID == 3) {
+            if (currentRoom.roomState == 1) {
+                roomText.setText("Welcome to room #3! \n You see a small dusty shop in the corner. \n Is that your hat?");
+                aOption.setText("Go shopping.");
+                bOption.setText("Or don't.");
+                cOption.setText("Or don't");
+                dOption.setText("Weren't expecting this text were you?");
+            } else {
+                roomText.setText("Welcome back to room #3! No, you can't go back to the shop. Yes, I know it's stupid. Yes, this is a beta. yes, I am lazy.");
+                if (canMove(1)) {
+                    aOption.setText("Press a to move North");
+                } else {
+                    aOption.setText("");
+                }
+                if (canMove(2)) {
+                    bOption.setText("Press b to move East");
+                } else {
+                    bOption.setText("");
+                }
+                if (canMove(3)) {
+                    cOption.setText("Press c to move West");
+                } else {
+                    cOption.setText("");
+                }
+                if (canMove(4)) {
+                    dOption.setText("Press d to move South");
+                } else {
+                    dOption.setText("");
+                }
+            }
+        }
+        else{
+            roomText.setText("WAIT WHAT!???\nSomething went terribly wrong.  I don't know if this is your fault or mine, but you aren't supposed to be here.\n  REALLY!  This isn't part of the game.  This room doens't even have a proper ID set up.\n\n  EROROROEROEEROOREEROEOREOR 10100101011001010100101100101\n]n1100100110010101001!!!");
             aOption.setText("Press a to quit");
             bOption.setText("Press b to quit");
             cOption.setText("Press c to quit");
@@ -152,74 +185,74 @@ public class RoomActivity extends AppCompatActivity {
         }
     }
 
-    public Room getCurrentRoom(){
-        return currentRoom;
-    }
+        public Room getCurrentRoom(){
+            return currentRoom;
+        }
 
-    public static boolean canMove(int direction){      //makes sure there is no zero room (A wall / blank room) in the direction you want to go
-        Room testRoom;
-        switch (direction){
-            case 1:
-                testRoom = dungeon.getRoom((row-1),column);
-                if(testRoom.getRoomID() == 0){
+        public static boolean canMove(int direction){      //makes sure there is no zero room (A wall / blank room) in the direction you want to go
+            Room testRoom;
+            switch (direction){
+                case 1:
+                    testRoom = dungeon.getRoom((row-1),column);
+                    if(testRoom.getRoomID() == 0){
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                case 2:
+                    testRoom = dungeon.getRoom(row,(column-1));
+                    if(testRoom.getRoomID() == 0){
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                case 3:
+                    testRoom = dungeon.getRoom(row,(column+1));
+                    if(testRoom.getRoomID() == 0){
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                case 4:
+                    testRoom = dungeon.getRoom((row+1),column);
+                    if(testRoom.getRoomID() == 0){
+                        return false;
+                    }
+                    else{
+                        return true;
+                    }
+                default:
                     return false;
-                }
-                else{
-                    return true;
-                }
-            case 2:
-                testRoom = dungeon.getRoom(row,(column-1));
-                if(testRoom.getRoomID() == 0){
-                    return false;
-                }
-                else{
-                    return true;
-                }
-            case 3:
-                testRoom = dungeon.getRoom(row,(column+1));
-                if(testRoom.getRoomID() == 0){
-                    return false;
-                }
-                else{
-                    return true;
-                }
-            case 4:
-                testRoom = dungeon.getRoom((row+1),column);
-                if(testRoom.getRoomID() == 0){
-                    return false;
-                }
-                else{
-                    return true;
-                }
-            default:
-                return false;
+            }
         }
-    }
 
-    public static void moveNorth(){    //moves up one row
-        if(canMove(1)){
-            row -= 1;
-            currentRoom = dungeon.getRoom(row, column);
+        public static void moveNorth(){    //moves up one row
+            if(canMove(1)){
+                row -= 1;
+                currentRoom = dungeon.getRoom(row, column);
+            }
         }
-    }
-    public static void moveEast(){     //moves across one column
-        if(canMove(2)){
-            column -= 1;
-            currentRoom = dungeon.getRoom(row,column);
+        public static void moveEast(){     //moves across one column
+            if(canMove(2)){
+                column -= 1;
+                currentRoom = dungeon.getRoom(row,column);
+            }
         }
-    }
-    public static void moveWest(){     //moves back one column
-        if(canMove(3)){
-            column += 1;
-            currentRoom = dungeon.getRoom(row,column);
+        public static void moveWest(){     //moves back one column
+            if(canMove(3)){
+                column += 1;
+                currentRoom = dungeon.getRoom(row,column);
+            }
         }
-    }
-    public static void moveSouth(){    //moves down one row
-        if(canMove(4)){
-            row += 1;
-            currentRoom = dungeon.getRoom(row,column);
+        public static void moveSouth(){    //moves down one row
+            if(canMove(4)){
+                row += 1;
+                currentRoom = dungeon.getRoom(row,column);
+            }
         }
-    }
 
 
-}
+    }
