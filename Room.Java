@@ -11,8 +11,8 @@ public class Room {
     int myColumn;       //column of the Room
     int roomID;         //ID of the room; used to tell what this room has in it
     int roomState;      //state of the room; used to tell what is happening in the room (Have the monsters been killed yet / dialog).
-    boolean isFight;    //
-    boolean isShop;     //Does the room have a fight?
+    boolean isFight;    //Does the room have a fight?
+    boolean isShop;     //Does the room have a shop?
 
     public int getRoomState() {
         return roomState;
